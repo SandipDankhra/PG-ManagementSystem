@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="card card-primary" *ngIf="display">
+    <div class="card-header">
+      <h3 class="card-title">Edit Flat</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form role="form" [formGroup]="flatFormGroup">
+      <div class="card-body">
+        <div class="form-group">
+          <label>Flat Number</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Flat Number"
+            formControlName="flatNumber"
+          />
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              flatFormGroup.controls.flatNumber.touched &&
+              flatFormGroup.controls.flatNumber.errors
+            "
+            >{{ flatFormGroup.controls.flatNumber.errorMessage }}<br
+          /></span>
+        </div>
+        <div class="form-group">
+          <label>Flat Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Flat Name"
+            formControlName="flatName"
+          />
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              flatFormGroup.controls.flatName.touched &&
+              flatFormGroup.controls.flatName.errors
+            "
+            >{{ flatFormGroup.controls.flatName.errorMessage }}<br
+          /></span>
+        </div>
+        <div class="form-group">
+          <label>Flat address</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Flat address"
+            formControlName="address"
+          />
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              flatFormGroup.controls.address.touched &&
+              flatFormGroup.controls.address.errors
+            "
+            >{{ flatFormGroup.controls.address.errorMessage }}<br
+          /></span>
+        </div>
+        <div class="form-group">
+          <label>Flat locality</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Flat locality"
+            formControlName="locality"
+          />
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              flatFormGroup.controls.locality.touched &&
+              flatFormGroup.controls.locality.errors
+            "
+            >{{ flatFormGroup.controls.locality.errorMessage }}<br
+          /></span>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <button
+          [disabled]="!flatFormGroup.valid"
+          type="submit"
+          class="btn btn-primary"
+          (click)="onUpdateFlat()"
+        >
+          Update Flat
+        </button>
+      </div>
+
+      <div class="card-footer">
+        <button type="button" class="btn btn-secondary" (click)="onGoBack()">
+          Go to Previous Page
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+
+<!-- <div class="container"> -->
+<div class="card">
+  
+  <div class="card-header">
+    <h3 class="card-title">Book Bed List </h3>
+    
+  </div>
+  
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>                  
+        <tr>
+          
+          <th>Full Name</th>
+          <th>Mobile Number</th>
+          <th>Flat Name</th>
+          <th>Flat Number</th>
+          <th>Room Number</th>
+         
+          <!-- <th>Bed Price</th> -->
+          <th>Rental City</th>
+          <!-- <th>Rental Type</th> -->
+          <th>Room Sharing</th>
+
+          
+          <!-- <th>Payment Type Id</th> -->
+          <th>Payment Amount</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          
+          <th style="width: 10px">Invoice</th>
+          <!-- <th style="width: 130px">Add Bed</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cbt of createBookBed">
+          
+          <td>{{cbt.firstName}} {{cbt.lastName}}</td>
+          <td>{{cbt.mobileNumber}}</td>
+          <td>{{cbt.flatName}}</td>
+          <td>{{cbt.flatNumber}}</td>
+          <td>{{cbt.roomNumber}}</td>  
+         
+          <!-- <td>{{cbt.bedPrice}}</td> -->
+          <td>{{cbt.rentalCity}}</td>
+        
+          <!-- <td>{{rentalTypeIdEnum[cbt.rentalType]}}</td> -->
+
+          <td>{{cbt.roomSharing}}</td>
+            <!-- <td>{{paymentTypeIdEnum[cbt.paymentTypeId]}}</td> -->
+            <td>{{cbt.paymentAmount}}</td>
+            <td>{{cbt.startDate}}</td>
+            <td>{{cbt.endDate}}</td>
+          <td><button class="card-title" type="button" class="btn btn-primary btn-sm"  data-toggle="modal" 
+            [routerLink]="['/v-invoice-record',cbt.bookBedId]" >Invoice</button></td>
+          <!-- <td><button class="card-title" type="button" class="btn btn-secondary btn-sm"  data-toggle="modal" 
+              >Add Room</button></td>   -->
+
+        </tr>
+        
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-footer clearfix">
+    <button class="btn btn-primary" type="button" (click)="onHomePage()">Go to Home Page</button>
+    
+  </div>
+</div>
+<!-- </div> -->
+

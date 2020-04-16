@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">ADD Room of Flat</h3>
+    </div>
+
+    <form role="form" [formGroup]="roomFormGroup">
+      <div class="card-body">
+        <input
+          type="text"
+          hidden
+          class="form-control"
+          formControlName="flatId"
+        />
+
+        <div class="form-group">
+          <label>Room Number</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Room Number"
+            formControlName="roomNumber"
+          />
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              roomFormGroup.controls.roomNumber.touched &&
+              roomFormGroup.controls.roomNumber.errors
+            "
+            >{{ roomFormGroup.controls.roomNumber.errorMessage }}<br
+          /></span>
+        </div>
+        <div class="form-group">
+          <label>Room Type (select from dropdown)</label>
+          <select class="form-control" formControlName="roomType">
+            <option disabled>Select room type</option>
+            <option *ngFor="let key of keys" [value]="key">{{
+              roomTypeEnum[key]
+            }}</option>
+          </select>
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              roomFormGroup.controls.roomType.touched &&
+              roomFormGroup.controls.roomType.errors
+            "
+            >{{ roomFormGroup.controls.roomType.errorMessage }}<br
+          /></span>
+        </div>
+        <div class="form-group">
+          <label>Room Sharing</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Room Sharing"
+            formControlName="roomSharing"
+          />
+          <span class="form-text text-muted">Enter number between 1 to 15</span>
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              roomFormGroup.controls.roomSharing.touched &&
+              roomFormGroup.controls.roomSharing.errors
+            "
+            >{{ roomFormGroup.controls.roomSharing.errorMessage }}<br
+          /></span>
+        </div>
+
+        <div class="card-footer">
+          <button
+            type="button"
+            [disabled]="!roomFormGroup.valid"
+            class="btn btn-primary"
+            (click)="onAddRoom()"
+          >
+            Add Room
+          </button>
+        </div>
+        <div class="card-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="onShowRoom()"
+          >
+            Show Room List
+          </button>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-secondary" (click)="onGoBack()">
+            Go to Previous Page
+          </button>
+        </div>
+      </div>
+    </form>
+    <!-- <button type="button" class="btn btn-secondary" align="right" (click)="onGoBack()">Go to Previous Page</button> -->
+  </div>
+</div>

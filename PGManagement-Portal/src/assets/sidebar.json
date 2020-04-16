@@ -1,0 +1,163 @@
+{
+  "links": [
+    {
+      "title": "Dashboard",
+      "uri": "dashboard",
+      "isOpen": true,
+      "isActive": true
+    },
+    {
+      "title": "Flat",
+      "uri": "flat",
+      "isOpen": true,
+      "isActive": true,
+      "childrens": [
+        {
+          "title": "Add",
+          "uri": "flat/add",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "title": "Room",
+      "uri": "room",
+      "isOpen": true,
+      "isActive": true
+    },
+    {
+      "title": "Bed",
+      "uri": "bed",
+      "isOpen": true,
+      "isActive": true
+    },
+    {
+      "title": "Booked Bed",
+      "uri": "create-book-bed",
+      "isOpen": true,
+      "isActive": true
+    },
+    {
+      "title": "Complaints",
+      "uri": "complaints",
+      "isOpen": true,
+      "isActive": true,
+      "childrens": [
+        {
+          "title": "Add",
+          "uri": "complaints/add",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "title": "Documents",
+      "uri": "documents",
+      "isOpen": true,
+      "isActive": true,
+      "childrens": [
+        {
+          "title": "Add",
+          "uri": "documents/add",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "title": "Employee",
+      "uri": "employee",
+      "isOpen": true,
+      "isActive": true,
+      "childrens": [
+        {
+          "title": "Add",
+          "uri": "employee/add",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "title": "Expense",
+      "uri": "expense",
+      "isOpen": true,
+      "isActive": true,
+      "childrens": [
+        {
+          "title": "Add",
+          "uri": "expense/add",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "title": "Menu",
+      "uri": "menu",
+      "isOpen": true,
+      "isActive": true
+    },
+    {
+      "title": "Notices",
+      "uri": "notices",
+      "isOpen": true,
+      "isActive": true,
+      "childrens": [
+        {
+          "title": "Add",
+          "uri": "notices/add",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "title": "Rental",
+      "uri": "rental",
+      "isOpen": true,
+      "isActive": true
+    },
+    {
+      "title": "Requester",
+      "uri": "requester",
+      "isOpen": true,
+      "isActive": true,
+      "childrens": [
+        {
+          "title": "Add",
+          "uri": "requester/add",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "title": "Reviews",
+      "uri": "reviews",
+      "isOpen": true,
+      "isActive": true,
+      "childrens": [
+        {
+          "title": "Add",
+          "uri": "reviews/add",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "title": "Role Permission",
+      "uri": "role-permission",
+      "isOpen": true,
+      "isActive": true,
+      "childrens": [
+        {
+          "title": "Add",
+          "uri": "role-permission/add",
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "title": "Available beds",
+      "uri": "v-available-bed",
+      "isOpen": true,
+      "isActive": true
+    }
+  ]
+}

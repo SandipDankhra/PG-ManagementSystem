@@ -1,0 +1,87 @@
+<app-clientheader></app-clientheader>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Available Bed list</h3>
+        <!-- <table style="float: right; ">
+            <tr>
+                <select id="locality" style="height: 2.6rem; width: 11.5rem; border-radius: 0.3rem;" (change)="onSelect(select)" #select>
+                    <option value="" disabled="" selected="">Select locality</option>
+                    <option value="loc" *ngFor="let loc of vAvailableBed">{{loc.locality}}</option>
+                    <option value="hello">hello</option>
+                    <option value="hello123">hello123</option>
+                </select>
+            </tr>
+        </table> -->
+    </div>
+    <!-- /.card-header -->
+    <div *ngIf="isShow" style="color: red;font-size: xx-large;text-align: center;">
+        <h1 class="far fa-far fa-5x"> &#xf119;</h1>
+        <h1> Sorry for inconvenience bed is not available </h1>
+    </div>
+    <div class="card-body" *ngIf="!isShow">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th scope="col">FlatName</th>
+                    <th scope="col">FlatNumber</th>
+                    <th scope="col">Locality</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">RoomNumber</th>
+                    <th scope="col">RoomSharing</th>
+                    <th scope="col">BedNumber</th>
+                    <th scope="col">BedPrice</th>
+                    <th scope="col">BookBed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bed of vAvailableBed index as i">
+                    <td>{{i+1}}.</td>
+                    <td>{{bed.flatName}}</td>
+                    <td>{{bed.flatNumber}}</td>
+                    <td>{{bed.locality}}</td>
+                    <td>{{bed.address}}</td>
+                    <td>{{bed.roomNumber}}</td>
+                    <td>{{bed.roomSharing}}</td>
+                    <td>{{bed.bedNumber}}</td>
+                    <td>{{bed.bedPrice}}</td>
+
+                    <td>
+                        <button class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal"
+                            (click)="getBedNumber(bed.bedNumber,bed.bedId)">Request Bed</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer clearfix" *ngIf="!isShow">
+      
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User request bookbed</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Bed Number : {{getbedNumber}} {{getbedId}}
+                <br>
+                Are you sure ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="sendRequest()" data-dismiss="modal">Confirm
+                    Request</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-clientfooter></app-clientfooter>

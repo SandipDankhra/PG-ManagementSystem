@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">ADD Bed of Room</h3>
+    </div>
+
+    <form role="form" [formGroup]="bedFormGroup">
+      <div class="card-body">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            hidden
+            formControlName="roomId"
+          />
+
+          <label>Bed Number</label>
+
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Bed Number"
+            formControlName="bedNumber"
+          />
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              bedFormGroup.controls.bedNumber.touched &&
+              bedFormGroup.controls.bedNumber.errors
+            "
+            >{{ bedFormGroup.controls.bedNumber.errorMessage }}</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Bed is Occupied? (select form dropdown)</label>
+          <!-- <input type="text" class="form-control"  placeholder="Enter Bed Status" formControlName="bedStatus"> -->
+          <select class="form-control" formControlName="bedStatus">
+            <option disabled selected>select type</option>
+
+            <option>False</option>
+          </select>
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              bedFormGroup.controls.bedStatus.touched &&
+              bedFormGroup.controls.bedStatus.errors
+            "
+            >{{ bedFormGroup.controls.bedStatus.errorMessage }}</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Bed Price</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Bed Price"
+            formControlName="bedPrice"
+          />
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              bedFormGroup.controls.bedPrice.touched &&
+              bedFormGroup.controls.bedPrice.errors
+            "
+            >{{ bedFormGroup.controls.bedPrice.errorMessage }}</span
+          >
+        </div>
+
+        <div class="card-footer">
+          <button
+            [disabled]="!bedFormGroup.valid"
+            type="button"
+            class="btn btn-primary"
+            (click)="onAddBed()"
+          >
+            Add Bed
+          </button>
+        </div>
+
+        <div class="card-footer">
+          <button type="button" class="btn btn-secondary" (click)="onShowBed()">
+            Show Bed List
+          </button>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-secondary" (click)="onGoBack()">
+            Go to Previous Page
+          </button>
+        </div>
+        <!-- <div class="card-footer">
+          <button type="button" class="btn btn-secondary" (click)="onShowRoom()">Show Room</button>
+        </div> -->
+      </div>
+    </form>
+  </div>
+</div>

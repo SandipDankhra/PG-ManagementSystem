@@ -1,0 +1,218 @@
+<app-clientheader></app-clientheader>
+<section id="Registration" class="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Registration</h2>
+    </div>
+
+    <div class="col-lg-12" data-aos="fade-up">
+      <form
+        role="form"
+        class="php-email-form"
+        [formGroup]="registrationFormGroup"
+      >
+        <div class="form-row">
+          <div class="col-lg-6 form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="First Name"
+              formControlName="firstName"
+            />
+            <!-- <div class="validate"></div> -->
+            <span
+              class="form-text text-danger"
+              *ngIf="
+                registrationFormGroup.controls.firstName.touched &&
+                registrationFormGroup.controls.firstName.errors
+              "
+            >
+              {{ registrationFormGroup.controls.firstName.errorMessage }}<br
+            /></span>
+          </div>
+          <div class="col-lg-6 form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Last Name"
+              formControlName="lastName"
+            />
+            <!-- <div class="validate"></div> -->
+            <span
+              class="form-text text-danger"
+              *ngIf="
+                registrationFormGroup.controls.lastName.touched &&
+                registrationFormGroup.controls.lastName.errors
+              "
+            >
+              {{ registrationFormGroup.controls.lastName.errorMessage }}<br
+            /></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-lg-6 form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              data-rule="email"
+              formControlName="email"
+            />
+            <!-- <div class="validate"></div> -->
+            <span
+              class="form-text text-danger"
+              *ngIf="
+                registrationFormGroup.controls.email.touched &&
+                registrationFormGroup.controls.email.errors
+              "
+            >
+              {{ registrationFormGroup.controls.email.errorMessage }}<br
+            /></span>
+          </div>
+          <div class="col-lg-6 form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Mobile Number"
+              maxlength="10"
+              formControlName="mobileNumber"
+            />
+            <!-- <div class="validate"></div> -->
+            <span
+              class="form-text text-danger"
+              *ngIf="
+                registrationFormGroup.controls.mobileNumber.touched &&
+                registrationFormGroup.controls.mobileNumber.errors
+              "
+            >
+              {{ registrationFormGroup.controls.mobileNumber.errorMessage }}<br
+            /></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-lg-6 form-group">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              formControlName="userPassword"
+            />
+            <!-- <div class="validate"></div> -->
+            <span
+              class="form-text text-danger"
+              *ngIf="
+                registrationFormGroup.controls.userPassword.touched &&
+                registrationFormGroup.controls.userPassword.errors
+              "
+              >{{ registrationFormGroup.controls.userPassword.errorMessage
+              }}<br
+            /></span>
+          </div>
+          <!-- <div class="col-lg-6 form-group">
+                        <input type="password" class="form-control" placeholder="Confirm Password" data-rule="minlen:6"
+                            data-msg="Please enter confirm password" formControlName="confirmPassword" />
+                        <div class="validate"></div>
+                    </div> -->
+        </div>
+
+        <div class="form-row">
+          <div class="col-lg-12 form-group">
+            <button type="submit" (click)="registerUser()">Submit</button>
+            <!-- <button type="submit" (click)="registerUser()">Submit</button> -->
+
+            <p>
+              <a href="#" [routerLink]="['/clientlogin']"
+                >Already have an account? Sign in</a
+              >
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <br />
+    <section id="Contact Us" class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="bx bx-map"></i></div>
+            <h3 class="title">Our Address</h3>
+            <p class="description">
+              Ekyarth, Malabar County Rd,<br />
+              Ahmedabad, Gujarat 382481
+            </p>
+            <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                    occaecati cupiditate non provident</p> -->
+          </div>
+          <div
+            class="col-lg-4 col-md-6 icon-box"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="icon"><i class="bx bx-envelope"></i></div>
+            <h3 class="title">Email Us</h3>
+            <p class="description">contact@pgmanagement.com</p>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 icon-box"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="icon"><i class="bx bx-phone-call"></i></div>
+            <h3 class="title">Call Us</h3>
+            <p class="description">+91 9696969696</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+<app-clientfooter></app-clientfooter>
+
+<!-- End Contact Us Section -->
+<!-- <div class="card" style="width: 70rem;">
+    <div class="row">
+
+       <a [routerLink]="['/client-index']" routerLinkActive="router-link-active" >Home</a>
+
+                <div class="section_title">
+                    <h1>Registration</h1>
+                </div>
+                <form class="contact_form" [formGroup]="registrationFormGroup">
+                    <div class="row">
+                        <div class="col-lg-6 ">
+                            <input type="text" class="contact_input" placeholder="first name"
+                                formControlName="firstName" required="required">
+                        </div>
+                        <div class="col-lg-6 contact_form_col">
+                            <input type="text" class="contact_input" placeholder="last name" formControlName="lastName"
+                                required="required">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="email" class="contact_input" placeholder="email" formControlName="email"
+                                required="required">
+                        </div>
+                        <div class="col-lg-6 contact_form_col">
+                            <input type="text" class="contact_input" placeholder="mobile number"
+                                formControlName="mobileNumber" required="required">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="password" class="contact_input" placeholder="password"
+                                formControlName="userPassword" required="required">
+                        </div>
+                        <div class="col-lg-6 contact_form_col">
+                            <input type="password" class="contact_input" placeholder="confirm password"
+                                formControlName="confirmPassword" required="required">
+                        </div>
+                    </div>
+                    <button class="contact_button trans_200" (click)="registerUser()">Send message</button>
+                </form>
+
+    </div>
+</div>
+ -->

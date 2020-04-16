@@ -1,0 +1,53 @@
+<div class="container">
+<div class="card">
+  <div class="container">
+  <div class="card-header">
+    <h3 class="card-title">Room Table List </h3>
+    
+  </div>
+  
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>                  
+        <tr>
+          <!-- <th style="width: 10px">FlatId</th> -->
+          <th style="width: 10px">Flat Number</th>
+          <th>Flat Name</th>
+          <th>Locality</th>
+          <th style="width: 10px">Room Number</th>
+          <th>Room Type</th>
+          <th>Room Sharing</th>
+          
+          <!-- <th style="width: 10px">Update</th> -->
+          <th style="width: 130px">Add Bed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rt of room">
+          <!-- <td>{{rt.flatId}}</td> -->
+          <td>{{rt.flatNumber}}</td>
+          <td>{{rt.flatName}}</td>
+          <td>{{rt.locality}}</td>
+          <td>{{rt.roomNumber}}</td>
+          <td>{{rt.roomType}}</td>
+          <td>{{rt.roomSharing}}</td>
+          
+          <!-- <td><button class="card-title" type="button" class="btn btn-primary btn-sm"  data-toggle="modal" 
+            (click)="EditRoom()">Update</button></td> -->
+          <td><button class="card-title" type="button" class="btn btn-secondary btn-sm"  data-toggle="modal" 
+            [routerLink]="['/bed/add/',rt.roomId]" >Add Bed</button></td>  
+
+        </tr>
+        
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-footer clearfix">
+    
+  </div>
+</div>
+</div>
+</div>
+

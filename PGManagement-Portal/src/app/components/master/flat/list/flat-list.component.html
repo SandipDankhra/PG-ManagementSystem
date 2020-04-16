@@ -1,0 +1,48 @@
+<div class="container">
+<div class="card">
+  
+  <div class="card-header">
+    <h3 class="card-title">FLAT Table</h3>
+    
+  </div>
+  <div class="card-header">
+    <button class="card-title" type="button" class="btn btn-primary btn-sm"  data-toggle="modal" data-target="#exampleModal"
+    (click)="AddFlat()">ADD Flat</button>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>                  
+        <tr>
+          <th style="width: 10px">Flat Number</th>
+          <th>Flat Name</th>
+          <th>Address</th>
+          <th>Locality</th>
+          <th style="width: 10px">Update</th>
+          <th style="width: 130px">Add Room</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ft of flat">
+          <td>{{ft.flatNumber}}</td>
+          <td>{{ft.flatName}}</td>
+          <td>{{ft.address}}</td>
+          <td>{{ft.locality}}</td>
+          <td><button class="card-title" type="button" class="btn btn-primary btn-sm"  data-toggle="modal" 
+            [routerLink]="[ft.flatId]"  >Update</button></td>
+          <td><button class="card-title" type="button" class="btn btn-secondary btn-sm"  data-toggle="modal" 
+              [routerLink]="['/room/add/',ft.flatId]">Add Room</button></td>  
+
+        </tr>
+        
+        
+      </tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+  <div class="card-footer clearfix">
+    
+  </div>
+</div>
+</div>
+

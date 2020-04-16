@@ -1,0 +1,140 @@
+<div class="container">
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">Book Bed</h3>
+    </div>
+
+    <form role="form" [formGroup]="createBookBedFormGroup">
+      <div class="card-body">
+        <div class="form-group">
+          <label>User Id</label>
+          <input type="text" class="form-control" formControlName="userId" />
+        </div>
+        <div class="form-group">
+          <label>bed Id</label>
+          <input type="text" class="form-control" formControlName="bedId" />
+        </div>
+        <!-- userId get from the dropdown -->
+        <!-- <div class="form-group">
+          <label >Users</label>
+          <select class="form-control" formControlName="userId" >
+            <option *ngFor="let user of users" [value]="user.userId" >{{user.firstName}} {{user.lastName}}</option>
+          </select>
+        </div> -->
+
+        <div class="form-group">
+          <label>Rental City</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Rental City"
+            formControlName="rentalCity"
+          />
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              createBookBedFormGroup.controls.rentalCity.touched &&
+              createBookBedFormGroup.controls.rentalCity.errors
+            "
+            >{{ createBookBedFormGroup.controls.rentalCity.errorMessage }}<br
+          /></span>
+        </div>
+
+        <div class="form-group">
+          <label>Rental Type (select from Dropdown)</label>
+          <select class="form-control" formControlName="rentalType">
+            <!-- <option selected disabled>select rental type</option> -->
+            <option *ngFor="let key of keys" [value]="key">{{
+              rentalTypeEnum[key]
+            }}</option>
+          </select>
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              createBookBedFormGroup.controls.rentalType.touched &&
+              createBookBedFormGroup.controls.rentalType.errors
+            "
+            >{{ createBookBedFormGroup.controls.rentalType.errorMessage }}<br
+          /></span>
+        </div>
+
+        <div class="form-group">
+          <label>Payment Type (select from Dropdown)</label>
+          <select class="form-control" formControlName="paymentTypeId">
+            <option *ngFor="let key of key" [value]="key">{{
+              paymentTypeEnum[key]
+            }}</option>
+          </select>
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              createBookBedFormGroup.controls.paymentTypeId.touched &&
+              createBookBedFormGroup.controls.paymentTypeId.errors
+            "
+            >{{ createBookBedFormGroup.controls.paymentTypeId.errorMessage
+            }}<br
+          /></span>
+        </div>
+
+        <div class="form-group">
+          <label>Payment Amount</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Payment Amount"
+            formControlName="paymentAmount"
+          />
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              createBookBedFormGroup.controls.paymentAmount.touched &&
+              createBookBedFormGroup.controls.paymentAmount.errors
+            "
+            >{{ createBookBedFormGroup.controls.paymentAmount.errorMessage
+            }}<br
+          /></span>
+        </div>
+
+        <div class="form-group">
+          <label>Start Date</label>
+          <input type="date" class="form-control" formControlName="startDate" />
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              createBookBedFormGroup.controls.startDate.touched &&
+              createBookBedFormGroup.controls.startDate.errors
+            "
+            >{{ createBookBedFormGroup.controls.startDate.errorMessage }}<br
+          /></span>
+        </div>
+
+        <div class="form-group">
+          <label>End Date</label>
+          <input type="date" class="form-control" formControlName="endDate" />
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              createBookBedFormGroup.controls.endDate.touched &&
+              createBookBedFormGroup.controls.endDate.errors
+            "
+            >{{ createBookBedFormGroup.controls.endDate.errorMessage }}<br
+          /></span>
+        </div>
+
+        <div class="card-footer">
+          <button
+            [disabled]="!createBookBedFormGroup.valid"
+            type="button"
+            class="btn btn-primary"
+            (click)="onAddCreateBookBed()"
+          >
+            BookBed
+          </button>
+        </div>
+        <!-- <div class="card-footer">
+          <button type="button" class="btn btn-secondary" (click)="onShowRoom()">Show Room</button>
+        </div> -->
+      </div>
+    </form>
+  </div>
+</div>

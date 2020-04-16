@@ -1,0 +1,109 @@
+<div class="card card-warning">
+  <div class="card-header">
+    <h3 class="card-title">General Elements</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body" *ngIf="isload">
+    <form role="form" [formGroup]="menuFormGroup">
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- text input -->
+          <div class="form-group">
+            <label>Day</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Day"
+              formControlName="day"
+            />
+            <span
+              class="form-text text-danger"
+              *ngIf="
+                menuFormGroup.controls.day.touched &&
+                menuFormGroup.controls.day.errors
+              "
+              >{{ menuFormGroup.controls.day.errorMessage }}<br
+            /></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- textarea -->
+          <div class="form-group">
+            <label>BreakFast</label>
+            <textarea
+              class="form-control"
+              rows="3"
+              placeholder="BreakFast"
+              formControlName="breakFast"
+            ></textarea>
+            <span
+              class="form-text text-danger"
+              *ngIf="
+                menuFormGroup.controls.breakFast.touched &&
+                menuFormGroup.controls.breakFast.errors
+              "
+              >{{ menuFormGroup.controls.breakFast.errorMessage }}<br
+            /></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- textarea -->
+          <div class="form-group">
+            <label>Lunch</label>
+            <textarea
+              class="form-control"
+              rows="3"
+              placeholder="Lunch"
+              formControlName="lunch"
+            ></textarea>
+            <span
+              class="form-text text-danger"
+              *ngIf="
+                menuFormGroup.controls.lunch.touched &&
+                menuFormGroup.controls.lunch.errors
+              "
+              >{{ menuFormGroup.controls.lunch.errorMessage }}<br
+            /></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- textarea -->
+          <div class="form-group">
+            <label>Dinner</label>
+            <textarea
+              class="form-control"
+              rows="3"
+              placeholder="Dinner"
+              formControlName="dinner"
+            ></textarea>
+            <span
+              class="form-text text-danger"
+              *ngIf="
+                menuFormGroup.controls.dinner.touched &&
+                menuFormGroup.controls.dinner.errors
+              "
+              >{{ menuFormGroup.controls.dinner.errorMessage }}<br
+            /></span>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button
+          [disabled]="!menuFormGroup.valid"
+          type="submit"
+          (click)="onUpdate()"
+          class="btn btn-primary"
+        >
+          Update
+        </button>
+      </div>
+    </form>
+  </div>
+  <!-- /.card-body -->
+</div>
